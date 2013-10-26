@@ -1,0 +1,14 @@
+{
+  "name": "fantasy-examples",
+  "version": "0.0.0",
+  "description": "Example uses of Fantasy Land projects.",
+  "keywords": [
+    "fantasyland"
+  ],
+  "author": "Brian McKenna",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "fantasy-states": "~0.2.0",
+    "fantasy-io": "0.0.1"
+  }
+}
