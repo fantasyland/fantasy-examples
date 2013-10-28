@@ -7,8 +7,9 @@
   ],
   "author": "Brian McKenna",
   "license": "BSD-2-Clause",
-  "devDependencies": {
+  "dependencies": {
     "fantasy-states": "~0.2.0",
-    "fantasy-io": "0.0.1"
+    "fantasy-io": "0.0.1",
+    "fantasy-combinators": "0.0.1"
   }
 }

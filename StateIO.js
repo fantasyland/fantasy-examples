@@ -1,4 +1,5 @@
-var StateT = require('fantasy-states').StateT,
+var C = require('fantasy-combinators'),
+    StateT = require('fantasy-states').StateT,
     IO = require('fantasy-io'),
     fs = require('fs'),
 
@@ -8,23 +9,11 @@ var StateT = require('fantasy-states').StateT,
     // Load 2 files, concatenate them to the start state and print the result.
     program =
         M.lift(readFile('package.json'))
-        .chain(compose(M.modify, prependTo))
-        .chain(constant(M.lift(readFile('StateIO.js'))))
-        .chain(compose(M.modify, prependTo))
-        .chain(constant(M.get))
-        .chain(compose(M.lift, println));
-
-function constant(a) {
-    return function(b) {
-        return a;
-    };
-}
-
-function compose(f, g) {
-    return function(x) {
-        return f(g(x));
-    };
-}
+        .chain(C.compose(M.modify)(prependTo))
+        .chain(C.constant(M.lift(readFile('StateIO.js'))))
+        .chain(C.compose(M.modify)(prependTo))
+        .chain(C.constant(M.get))
+        .chain(C.compose(M.lift)(println));
 
 function prependTo(a) {
     return function(b) {
