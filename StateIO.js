@@ -1,7 +1,11 @@
 var C = require('fantasy-combinators'),
     StateT = require('fantasy-states').StateT,
     IO = require('fantasy-io'),
+    combinators = require('fantasy-combinators'),
     fs = require('fs'),
+
+    compose = combinators.compose,
+    constant = combinators.constant,
 
     // Monad which contains state and can do IO.
     M = StateT(IO),

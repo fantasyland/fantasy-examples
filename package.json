@@ -10,6 +10,7 @@
   "dependencies": {
     "fantasy-states": "~0.2.0",
     "fantasy-io": "0.0.1",
-    "fantasy-combinators": "0.0.1"
+    "fantasy-combinators": "0.0.x",
+    "fantasy-promises": "0.x.x"
   }
 }
